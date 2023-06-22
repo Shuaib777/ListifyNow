@@ -1,0 +1,82 @@
+body {
+    background-color: rgb(29, 28, 28);
+    font-family: Arial;
+    color: white
+}
+
+button {
+    cursor: pointer;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+
+.main-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.heading {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.css-search {
+    border: 1px solid rgb(135, 135, 135);
+    padding: 10px 7px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.css-todo-date {
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 8px;
+
+}
+
+.add-button {
+    padding: 10px 40px;
+    font-size: 14px;
+    margin-left: 15px;
+    background-color: rgb(11, 147, 11);
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
+
+.css-todo-list {
+    width: 500px;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.todo-list-div {
+    width: 200px;
+    margin-right: 35px;
+    padding-left: 5px;
+}
+
+.todo-date-div {
+    width: 125px;
+}
+
+.delete-button-div {
+    width: 100px;
+}
+
+.delete-button {
+    padding: 10px 33px;
+    font-size: 14px;
+    margin-left: 6px;
+    background-color: rgb(11, 147, 11);
+    border: none;
+    color: white;
+    border-radius: 20px;
+}
