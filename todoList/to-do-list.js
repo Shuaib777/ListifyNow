@@ -1,7 +1,7 @@
 
 //firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBlbb02P8nCYB83ScRtsEGuRar3E-WRfNc",
@@ -18,53 +18,38 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 
-const todoList = [];
-const todoDate = [];
+document.querySelector('.add-button').addEventListener('click', () => addTodo());
+
+let todoDate=[];
+let todoList=[];
+
+onValue(ref(database, 'user1/'), (snapshot) => {
+    todoDate = snapshot.val()['todoDate'];
+    todoList = snapshot.val()['todoList'];
+
+    
+
+});
 
 function addTodo() {
 
     let element = document.querySelector('.js-search').value;
-
     let date = document.querySelector('.js-todo-date').value;
 
-    todoList.push(element);
-    todoDate.push(date);
+    if(element != "" && date != "") {
 
-    displayTodo(element, date);
+        todoList.push(element);
+        todoDate.push(date);
 
-    document.querySelector('.js-search').value="";
-    document.querySelector('.js-todo-date').value="";
-    
-}
+        displayTodo();
 
-function displayTodo(element, date) {
+        document.querySelector('.js-search').value="";
+        document.querySelector('.js-todo-date').value="";
 
-    let todoHtml = ''; 
-
-    for(let i=0; i<todoList.length; i++) {
-        const html = `
-            <div class="css-todo-list">
-                <div class="todo-list-div">
-                    ${todoList[i]}
-                </div>
-                <div class="todo-date-div">
-                    ${todoDate[i]}
-                </div>
-                <div class="delete-button-div">
-                    <button class="delete-button" onclick="deleteTodo(${i});">
-                        Delete
-                    </button>
-                </div>
-            </div>`
-        todoHtml+= html;
-
-    }
-
-    
-    if(element != "" && date != "")
-    {
-
-        document.querySelector('.js-todo-div').innerHTML = todoHtml;
+        update(ref(database, 'user1/'), {
+            'todoList': todoList,
+            'todoDate': todoDate
+        })
 
     } else {
 
@@ -79,6 +64,40 @@ function displayTodo(element, date) {
         }
 
     }
+}
+
+function displayTodo() {
+
+    let todoHtml = ''; 
+
+    for(let i=0; i<todoList.length; i++) {
+        const html = `
+            <div class="css-todo-list">
+                <div class="todo-list-div">
+                    ${todoList[i]}
+                </div>
+                <div class="todo-date-div">
+                    ${todoDate[i]}
+                </div>
+                <div class="delete-button-div">
+                    <button class="delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>`
+        todoHtml+= html;        
+    }
+
+    document.querySelector('.js-todo-div').innerHTML = todoHtml;
+
+    document.querySelectorAll('.delete-button')
+        .forEach((deleteButton, index) => {
+            deleteButton.addEventListener('click', () => {
+                deleteTodo(index);
+            });
+        });
+
+    
 
 }
 
@@ -86,6 +105,12 @@ function deleteTodo(i) {
 
     todoList.splice(i,1);
     todoDate.splice(i,1);
+
+    update(ref(database, 'user1/'), {
+        'todoList': todoList,
+        'todoDate': todoDate
+    })
+
     displayTodo(); 
 
 }
