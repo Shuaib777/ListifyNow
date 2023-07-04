@@ -1,0 +1,157 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #00c3ff, #ffff1c);;
+}
+
+.nav-head {
+    height: 10vh;
+    display: flex;
+    background: linear-gradient(to right, #00c3ff, #ffff1c);;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 2px;
+    border: 1px solid #ffff1c ;
+    box-shadow: 10px 10px 20px ;
+    border-radius: 4px;
+}
+
+.nav-head a {
+    color: rgb(84, 86, 137);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.logo a {
+    font-size: 25px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+
+.container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 40%;
+    background-color: transparent;
+    padding: 20px 30px;
+    border: 1px solid #ffff1c;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+
+}
+
+.form-box header h1 {
+    color: #3e798f;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.check-user {
+    color: red;
+    margin: 10px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 18px;
+    border: 1px solid rgb(232, 226, 226);
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.6);
+    color: rgb(72, 66, 66);
+    border-radius: 4px;
+}
+
+form > div {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color: red;
+
+}
+
+.form-box a {
+    text-decoration: none;
+    color: gray;
+}
+
+input[name="nameField"] {
+    display: none;
+}
+
+input[name="confirmPasswordField"] {
+    display: none;
+}
+
+input[type="submit"] {
+
+    margin-top: 10px;
+    background-color: rgb(43, 205, 94);
+    border: none;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(33, 137, 66);
+}
+
+input[type="submit"]:active {
+    background-color: rgb(33, 137, 66);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    opacity: 0.8;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.links a img {
+    height: 30px;
+    margin: 10px;
+}
+
+.sign-up {
+    text-align: center;
+}
+
+.sign-up a {
+    color: #3e798f;
+}
+
+.sign-up a:hover {
+    color: #336a7e;
+    text-decoration: underline 2px;
+}
+
+@media screen and (max-width: 720px){
+    .form-box {
+        width: 70%;
+    }    
+}

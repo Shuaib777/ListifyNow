@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="nav-head">
+        <div class="logo">
+            <a href="http://127.0.0.1:5500/home/home.html">SHUAIB</a>
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-links">
+                    <a href="http://127.0.0.1:5500/home/home.html">Home</a>
+                </li>
+                <li class="nav-links">
+                    <a href="about.html">About</a>
+                </li>
+                <li class="nav-links">
+                    <a href="contact.html">Contact
+                    </a>
+                </li>
+                <li class="nav-links">
+                    <a href="http://127.0.0.1:5500/form/login/form.html">Registration</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="form-box" >
+            <header>
+                <h1 id="header">SIGN UP</h1>
+            </header>
+
+            <form onsubmit="signupFun(event);">
+
+                <input type="text" placeholder="Name" name="nameField" id="nameField">
+                <div id="name-error"></div>
+
+                <input type="email" placeholder="Email / Username" name="emailField" id="emailField">
+                <div id="email-error"></div>
+
+                <input type="password" placeholder="Password" name="passwordField" id="passwordField">
+                <div id="password-error"></div>
+
+                <input type="password" placeholder="Confirm Password" name="confirmPasswordField" id="confirmPasswordField">
+                <div id="confirm-error"></div>
+
+                <input type="submit" value="SIGN UP" id="signup-btn">
+            </form>
+
+            <div class="links">
+                <a href=""><img src="image/google.png" ></a>
+                <a href=""><img src="image/Facebook.png" ></a>
+                <a href=""><img src="image/twitter.png" ></a>
+            </div>
+
+            <div class="login-div">
+                <p class="login">Already a member?<a href="http://127.0.0.1:5500/form/login/form.html" id="login-link">login</a></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="signup.js" type="module"></script>
+
+</body>
+</html>
+

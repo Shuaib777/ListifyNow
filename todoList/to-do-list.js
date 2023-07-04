@@ -1,4 +1,23 @@
 
+//firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBlbb02P8nCYB83ScRtsEGuRar3E-WRfNc",
+  authDomain: "front-end-project-62b58.firebaseapp.com",
+  databaseURL: "https://front-end-project-62b58-default-rtdb.firebaseio.com",
+  projectId: "front-end-project-62b58",
+  storageBucket: "front-end-project-62b58.appspot.com",
+  messagingSenderId: "988745008693",
+  appId: "1:988745008693:web:a2789d6b7552ae0f33137c",
+  measurementId: "G-YHWY5ENBWG"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+
 const todoList = [];
 const todoDate = [];
 
@@ -70,3 +89,5 @@ function deleteTodo(i) {
     displayTodo(); 
 
 }
+
+
