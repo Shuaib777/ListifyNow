@@ -1,7 +1,18 @@
 body {
-    background-color: rgb(29, 28, 28);
-    font-family: Arial;
-    color: white
+    background-image: url('homeImg.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 85vh;
+    background-position: center;
+    
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgb(18, 17, 17);
+    padding-top: 100px;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
 }
 
 button {
@@ -12,71 +23,177 @@ button:active {
     opacity: 0.6;
 }
 
-
-.main-div {
+.nav-head {
+    position: fixed;
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    height: 10vh;
     display: flex;
+    background: transparent;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid brown ;
+    box-shadow: 10px 10px 20px rgba(58, 55, 55, 0.2);
+    border-radius: 4px;
 }
 
+.nav-head a {
+    color: brown;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.logo a {
+    font-size: 25px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+
 .heading {
-    font-size: 30px;
+    text-align: center ;
+    color: brown;
+    font-size: 70px;
     margin-bottom: 30px;
 }
 
+.main-div {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.upper-div {
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
 .css-search {
     border: 1px solid rgb(135, 135, 135);
-    padding: 10px 7px;
-    font-size: 15px;
+    padding: 10px 10px;
+    font-size: 20px;
     border-radius: 8px;
+    outline: none;
 }
 
 .css-todo-date {
-    margin-left: 15px;
     padding: 10px;
     border-radius: 8px;
+    border: 1px solid rgb(135, 135, 135);
+    font-size: 20px;
 
 }
 
 .add-button {
-    padding: 10px 40px;
-    font-size: 14px;
-    margin-left: 15px;
-    background-color: rgb(11, 147, 11);
-    border: none;
+    padding: 10px 42px;
+    font-size: 17px;
+    background-color: rgb(169, 48, 48);
     color: white;
     border-radius: 20px;
+    border: none;
 }
 
 .css-todo-list {
-    width: 500px;
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .todo-list-div {
-    width: 200px;
-    margin-right: 35px;
-    padding-left: 5px;
+    width: 281px;
+    padding-left: 10px;
+    font-size: 20px;
 }
 
 .todo-date-div {
-    width: 125px;
-}
-
-.delete-button-div {
-    width: 100px;
+    width: 181px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .delete-button {
     padding: 10px 33px;
-    font-size: 14px;
-    margin-left: 6px;
-    background-color: rgb(11, 147, 11);
+    font-size: 17px;
+    background-color:  rgb(169, 48, 48);
     border: none;
     color: white;
     border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .main-div {
+        flex-wrap: nowrap;
+    }
+    .nav-head a {
+        font-size: 18px;
+    }
+    .css-search {
+        max-width: 100px;
+        font-size: 18px;
+    }
+    .css-todo-date {
+        max-width: 130px;
+        font-size: 18px;
+    }
+    .add-button {
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+    .todo-list-div {
+        max-width: 110px;
+        font-size: 18px;
+    }
+    .todo-date-div {
+        max-width: 130px;
+        font-size: 18px;
+    }
+    .delete-button {
+        padding: 10px 10px;
+        border-radius: 30px;
+    }
+}
+@media screen and (max-width: 800px) and (min-width: 601px) {
+    .main-div {
+        flex-wrap: nowrap;
+    }
+    .css-search {
+        max-width: 200px;
+        font-size: 18px;
+    }
+    .css-todo-date {
+        max-width: 150px;
+        font-size: 18px;
+    }
+    .add-button {
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+    .todo-list-div {
+        max-width: 200px;
+        font-size: 18px;
+    }
+    .todo-date-div {
+        max-width: 150px;
+        font-size: 18px;
+    }
+    .delete-button {
+        padding: 10px 10px;
+        border-radius: 30px;
+    }
 }

@@ -11,8 +11,6 @@ const passwordError = document.getElementById('password-error');
 const confirmPassword = document.getElementById('confirmPasswordField');
 const confirmError = document.getElementById('confirm-error');
 
-const signupButton = document.getElementById('signup-btn');
-
 function validate() {
 
     if(namefield.value === '' || namefield.value.length<3){
@@ -52,8 +50,6 @@ function validate() {
 }
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
 
@@ -69,9 +65,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth();
-
 
 window.signupFun = function(e) {
 
@@ -84,14 +78,14 @@ window.signupFun = function(e) {
     if(validate) {
         createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
+        
+            const user = userCredential.user;
 
-        location.replace('http://127.0.0.1:5500/todoList/to-do-list.html');
+            location.replace('http://127.0.0.1:5500/todoList/to-do-list.html');
         })
         .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+            const errorCode = error.code;
+            const errorMessage = error.message;
         });
     }
 }
