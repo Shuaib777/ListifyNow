@@ -66,7 +66,7 @@ window.loginFun = function(e) {
         // Signed in 
         const user = userCredential.user;
 
-        location.replace('http://127.0.0.1:5500/todoList/to-do-list.html');
+        location.replace('https://shuaib777.github.io/ListifyNow/todoList/to-do-list.html');
         
         })
         .catch((error) => {
